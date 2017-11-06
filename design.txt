@@ -13,7 +13,7 @@
 项目管理：redmine
 权限管理：openldap
 编写用例工具：计划设计
-持续集成：jenkins
+持续集成：jenkins（android打包参考http://www.jianshu.com/p/915c1ae69144）
 性能工具：ab
 安全工具：kaillinux
 邮件工具：roundcube
