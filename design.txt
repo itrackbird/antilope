@@ -25,6 +25,6 @@
 安全工具：kaillinux
 邮件工具：roundcube
 运维管理：ansible集成
-
+数据库Nosql： hbase
 
 对于测试来说，可以将服务下线，暂停服务，防止升级过程中，人为操作导致的损失。
