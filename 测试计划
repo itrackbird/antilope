@@ -16,3 +16,33 @@ http://netsecurity.51cto.com/art/201709/552650.htm
 15、jacoo和sonar来安装配置 请参考http://www.51testing.com/html/50/253150-848196.html
 16、sonar介绍 请参考http://www.uml.org.cn/jchgj/201307251.asp
 17、androd代码扫描配置 请参考http://blog.csdn.net/rain_butterfly/article/details/42170601
+
+
+测试流程：
+1、代码可以有多个分支，但是最终代码需要提交到master分支
+2、对于一些配置项参数，使用配置文件来分离（全局环境变量、局部环境变量），方便管理
+3、提交版本测试，尽可能是master分支（全量打包），通过集成工具来编译打包、单元测试、覆盖率检查、代码质量检查(通过maven、sonar工具产生报表，建立nexus私服加速编译过程)
+4、测试部署环境，改变环境变量（通过shell实现）以上两步可以通过jenkins来持续集成
+5、开始执行测试用例，收集代码覆盖率文件，统计覆盖率
+6、以上在confluence记录产生的输出文档，方便后期的分析
+7、将测试通过的包放到运维指定的目录，包含安装说明、版本说明（统一在linux系统中操作，用shell脚本实现，记录日志）
+
+
+sonar账号
+admin/admin
+
+jenkins账号
+root/123456
+
+confluence账号
+root/123456
+
+nexus账号
+admin/admin123
+
+gogs账号
+root/123456
+
+android自带录屏功能screenshot
+
+mariadb安装集群，后续所有的容器连接的数据库都连接到上面
