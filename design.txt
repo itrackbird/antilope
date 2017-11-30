@@ -16,6 +16,8 @@
   15、覆盖率工具 coveage.py jacoco
   16、单元测试（核心业务的解耦）
   17、企业wiki工具confluence
+  18、chatops rocket.chat
+  19、errbot 聊天机器人
   
 整个系统包括系统平台、项目管理工具、权限管理、团队交流工具、编写用例工具、持续集成、性能工具、安全工具、邮件工具、运维管理工具
 系统平台：k8s、registry
