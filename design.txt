@@ -19,7 +19,7 @@
   18、chatops rocket.chat
   19、errbot 聊天机器人
   20、Hitchhiker 团队协作的api测试平台
-  21、docker和ansible集成，以及docker的网络模式macvlan、flannel
+  21、docker和ansible集成，以及docker的网络模式macvlan、flannel（参考https://www.cnblogs.com/kevingrace/p/6859114.html）
   
 整个系统包括系统平台、项目管理工具、权限管理、团队交流工具、编写用例工具、持续集成、性能工具、安全工具、邮件工具、运维管理工具
 系统平台：k8s、registry
