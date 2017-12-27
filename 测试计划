@@ -16,7 +16,7 @@ http://netsecurity.51cto.com/art/201709/552650.htm
 15、jacoo和sonar来安装配置 请参考http://www.51testing.com/html/50/253150-848196.html
 16、sonar介绍 请参考http://www.uml.org.cn/jchgj/201307251.asp
 17、androd代码扫描配置 请参考http://blog.csdn.net/rain_butterfly/article/details/42170601
-
+18、运维工具teleport
 
 测试流程：
 1、代码可以有多个分支，但是最终代码需要提交到master分支
