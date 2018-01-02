@@ -19,6 +19,8 @@ http://netsecurity.51cto.com/art/201709/552650.htm
 18、运维工具teleport
 19、mkdocs文档生成器
 20、nsq 
+21、Syncthing 文件同步
+
 
 测试流程：
 1、代码可以有多个分支，但是最终代码需要提交到master分支
