@@ -1,12 +1,12 @@
 # 概述
 
-这是关于测试过程中使用工具的总结，包括项目管理工具、用例工具、环境搭建工具、文档编写工具、CI/CD、编程语言Node、Go、Python以及容器docker。
+这是关于测试过程中使用工具的总结，包括项目管理工具、测试工具、环境搭建工具、文档编写工具、CI/CD、编程语言Node、Go、Python、性能安全测试工具以及树莓派使用。
 
 ### 项目管理工具
 
 项目管理工具主要是用来记录版本下面问题单，方便统计与跟踪，控制版本质量。推荐两个软件，redmine与jira，前者开源功能较少，而后者商用功能较多，同时也可以与Atlassian公司其他产品搭配使用功能强大。关于redmine的使用，参考其[官网](http://www.redmine.org/)介绍，对于小型团队完全满足需求。关于jira的使用，参考[jira中文介绍](http://www.confluence.cn/dashboard.action)，同时也有该公司其他产品介绍。
 
-##### redmine搭建
+#### redmine搭建
 
 对于redmine的安装，推荐使用[bitnami公司](https://bitnami.com/)制作好的安装包，支持windows、linux安装包以及docker搭建。
 
@@ -16,7 +16,7 @@
 
 > **`docker-compose`是python的一个库，使用`pip install docker-compose`安装即可，参考各个系统的docker-compose[安装说明](https://docs.docker.com/compose/install/)**
 
-##### jira搭建
+#### jira搭建
 
 推荐使用docker安装，方便快速。
 
@@ -26,9 +26,9 @@ root@raspberrypi:~# docker run --detach --publish 8080:8080 cptactionhank/atlass
 
 之后访问docker主机的8080端口进行设置即可，具体参考dockerhub官方[jira镜像](https://hub.docker.com/r/cptactionhank/atlassian-jira/)使用。
 
-### 用例工具
+### 测试工具
 
-接下来主要讨论工具，对于如何编写测试用例参考[用户故事与敏捷方法的设计规则](https://www.cnblogs.com/mixiaobo/archive/2008/11/03/1325809.html)。手工用例采用execl文本记录，接口用例、自动化用例推荐使用[robotframework](http://robotframework.org/)工具，web自动化使用selenium编写，可以搭配使用robotframework工具，进行用例积累。在接口测试过程中，对于有些部件接口需要模拟情况下，可以使用soapui模拟，同时也推荐使用node的[Mock.js](https://github.com/nuysoft/Mock)以及其他第三库来搭建，顺便积累编程知识。
+接下来主要讨论工具，对于如何编写测试用例参考[用户故事与敏捷方法的设计规则](https://www.cnblogs.com/mixiaobo/archive/2008/11/03/1325809.html)。手工用例采用execl文本记录，接口用例、自动化用例推荐使用[robotframework](http://robotframework.org/)工具，web自动化使用selenium编写，可以搭配使用robotframework工具，进行用例积累。在接口测试过程中，对于有些部件接口需要模拟情况下，可以使用soapui模拟，同时也推荐使用node的[Mock.js](https://github.com/nuysoft/Mock)以及其他第三库来搭建，顺便积累编程知识。搭建[appium](http://www.cnblogs.com/Mushishi_xu/p/7685897.html)对手机app测试，团队协作的api测试平台[Hitchhiker](https://gitee.com/iwxiaot/Hitchhiker)。
 
 ### 环境搭建工具
 
@@ -70,7 +70,7 @@ root@raspberrypi:~# docker run --detach --publish 8080:8080 cptactionhank/atlass
 * 编译构建工具[drone](https://github.com/drone/drone)
 * 容器编排[kubernets](https://kubernetes.io/)
 
-其中还有docker管理工具**[Portainer](https://github.com/portainer/portainer)**，全栈化企业级容器管理平台[rancherOS](https://www.cnrancher.com/)，持续交付与滚动升级工具[ansible](http://www.ansible.com.cn/)，镜像仓库[registry](https://docs.docker.com/registry/)，容器网络模式[macvlan](https://docs.docker.com/engine/userguide/networking/get-started-macvlan/)、[flannel](https://coreos.com/flannel/docs/latest/)、[calico](https://www.projectcalico.org/)、[ovs](https://github.com/openvswitch/ovs)，证书认证[cfssl](http://blog.simlinux.com/archives/1953.html)，服务注册和发现[etcd](https://coreos.com/etcd/docs/latest/docs.html#documentation)，无服务器[OpenFaas](https://github.com/openfaas/faas)。
+其中还有docker的web管理工具**[Portainer](https://github.com/portainer/portainer)**、桌面工具[Kitematic](https://kitematic.com/)，全栈化企业级容器管理平台[rancherOS](https://www.cnrancher.com/)，持续交付与滚动升级工具[ansible](http://www.ansible.com.cn/)，镜像仓库[registry](https://docs.docker.com/registry/)，容器网络模式[macvlan](https://docs.docker.com/engine/userguide/networking/get-started-macvlan/)、[flannel](https://coreos.com/flannel/docs/latest/)、[calico](https://www.projectcalico.org/)、[ovs](https://github.com/openvswitch/ovs)，证书认证[cfssl](http://blog.simlinux.com/archives/1953.html)，服务注册和发现[etcd](https://coreos.com/etcd/docs/latest/docs.html#documentation)，无服务器[OpenFaas](https://github.com/openfaas/faas)。
 
 > **对于CI/CD过程中需要规划各个流程，版本定义、Dockerfile等**
 
@@ -78,4 +78,24 @@ root@raspberrypi:~# docker run --detach --publish 8080:8080 cptactionhank/atlass
 
 不想学习全栈的测试不是好的测试：）
 
-前端推荐框架推荐学习[Vue.js](https://github.com/vuejs/vue)，后端推荐学习Go框架[Gin](https://github.com/gin-gonic/gin)、Python框架[django](https://github.com/django/django)。
+前端框架Vue.js](https://github.com/vuejs/vue)，后端Go框架[Gin](https://github.com/gin-gonic/gin)、Python框架[django](https://github.com/django/django)，桌面应用框架[Electron](https://github.com/electron/electron)
+
+### 性能安全测试工具
+
+性能压力测试工具ab、数据库扫描工具sqlmap、安全测试系统kailinux、漏洞扫描工具Vuls、网络扫描工具nmap。 
+
+### 树莓派使用
+
+树莓派是尺寸仅有信用卡大小的一个小型电脑，您可以将树莓派连接电视、显示器、键盘鼠标等设备使用。完全支持在树莓派上安装docker以及k8s，参考[HypriotOS博客](https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/)。
+
+目前正计划完成在树莓派是上安装kubernets，进度在本仓库另一个项目[itrackbird/raspbian](https://github.com/itrackbird/raspbian/tree/master/kubernets)中。
+
+### 其他
+
+以下记录测试过程中需要关注的地方。
+
+* 对于需求不明确的地方找产品确认
+* 对于测试过程中编写文档
+* 规划版本标识，设计安装脚本
+* 。。。
+
