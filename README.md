@@ -60,7 +60,7 @@ root@raspberrypi:~# docker run --detach --publish 8080:8080 cptactionhank/atlass
 
 持续集成和持续交付解决方案，实现产品快速迭代。基本流程代码编译打包 ==> 环境部署 ==> 执行测试 ==> 生产部署 ==> 升级回滚、扩容缩容，之前接触过以k8s与docker为基础实现的解决方案。
 
-首先准备好各种语言的编译环境镜像，如java、go、node等，系统从SVN或者GIT服务器上拉取代码仓库到编译镜像中编译，等待结束后，执行仓库中Dockerfile文件来构建应用镜像。当构建通过之后，将该镜像上传到代码仓库，会通过[webhook机制](https://github.com/adnanh/webhook)触发更新所有以该镜像组成的应用，实现实时更新。同时，通过k8s本身的服务管理机制进行升级回滚、扩容缩容。
+首先准备好各种语言的编译环境镜像，如java、go、node等，系统从SVN或者GIT服务器上拉取代码仓库到编译镜像中编译，等待结束后，执行仓库中Dockerfile文件加载上一步代码编译好的二进制文件来构建应用镜像。当构建通过之后，将该镜像上传到代码仓库，会通过[webhook机制](https://github.com/adnanh/webhook)触发更新所有以该镜像组成的应用，实现实时更新。同时，通过k8s本身的服务管理机制进行升级回滚、扩容缩容。
 
 > **构建镜像是指已安装对应语言的打包工具的镜，如mvn、ant、webpack等**
 
@@ -74,3 +74,8 @@ root@raspberrypi:~# docker run --detach --publish 8080:8080 cptactionhank/atlass
 
 > **对于CI/CD过程中需要规划各个流程，版本定义、Dockerfile等**
 
+### Node、Go、Python
+
+不想学习全栈的测试不是好的测试：）
+
+前端推荐框架推荐学习[Vue.js](https://github.com/vuejs/vue)，后端推荐学习Go框架[Gin](https://github.com/gin-gonic/gin)、Python框架[django](https://github.com/django/django)。
