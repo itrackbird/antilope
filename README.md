@@ -90,6 +90,11 @@ root@raspberrypi:~# docker run --detach --publish 8080:8080 cptactionhank/atlass
 
 目前正计划完成在树莓派是上安装kubernets，进度在本仓库另一个项目[itrackbird/raspbian](https://github.com/itrackbird/raspbian/tree/master/kubernets)中。
 
+### 运维工具
+
+* 服务器管理工具[Teleport](http://teleport.eomsoft.net/)
+* ​
+
 ### 其他
 
 以下记录测试过程中需要关注的地方。
