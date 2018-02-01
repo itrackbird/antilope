@@ -30,6 +30,12 @@ root@raspberrypi:~# docker run --detach --publish 8080:8080 cptactionhank/atlass
 
 接下来主要讨论工具，对于如何编写测试用例参考[用户故事与敏捷方法的设计规则](https://www.cnblogs.com/mixiaobo/archive/2008/11/03/1325809.html)。手工用例采用execl文本记录，接口用例、自动化用例推荐使用[robotframework](http://robotframework.org/)工具，web自动化使用selenium编写，可以搭配使用robotframework工具，进行用例积累。在接口测试过程中，对于有些部件接口需要模拟情况下，可以使用soapui模拟，同时也推荐使用node的[Mock.js](https://github.com/nuysoft/Mock)以及其他第三库来搭建，顺便积累编程知识。搭建[appium](http://www.cnblogs.com/Mushishi_xu/p/7685897.html)对手机app测试，团队协作的api测试平台[Hitchhiker](https://gitee.com/iwxiaot/Hitchhiker)。
 
+REST接口测试工具[insomnia](https://github.com/getinsomnia/insomnia)，基于electron-vue开发，方便使用。
+
+### 开发工具
+
+代码审查工具[phabricator](https://github.com/phacility/phabricator)
+
 ### 环境搭建工具
 
 环境的搭建需要各个方面的知识，包括bash编程、linux系统知识、编程知识等。
@@ -70,7 +76,7 @@ root@raspberrypi:~# docker run --detach --publish 8080:8080 cptactionhank/atlass
 * 编译构建工具[drone](https://github.com/drone/drone)
 * 容器编排[kubernets](https://kubernetes.io/)
 
-其中还有docker的web管理工具[Portainer](https://github.com/portainer/portainer)、桌面工具[Kitematic](https://kitematic.com/)，全栈化企业级容器管理平台[rancherOS](https://www.cnrancher.com/)，持续交付与滚动升级工具[ansible](http://www.ansible.com.cn/)，镜像仓库[registry](https://docs.docker.com/registry/)，容器网络模式[macvlan](https://docs.docker.com/engine/userguide/networking/get-started-macvlan/)、[flannel](https://coreos.com/flannel/docs/latest/)、[calico](https://www.projectcalico.org/)、[ovs](https://github.com/openvswitch/ovs)，证书认证[cfssl](http://blog.simlinux.com/archives/1953.html)，服务注册和发现[etcd](https://coreos.com/etcd/docs/latest/docs.html#documentation)，无服务器[OpenFaas](https://github.com/openfaas/faas)。
+其中还有docker的web管理工具[Portainer](https://github.com/portainer/portainer)、桌面工具[Kitematic](https://kitematic.com/)，全栈化企业级容器管理平台[rancherOS](https://www.cnrancher.com/)，持续交付与滚动升级工具[ansible](http://www.ansible.com.cn/)，镜像仓库[registry](https://docs.docker.com/registry/)，容器网络模式[macvlan](https://docs.docker.com/engine/userguide/networking/get-started-macvlan/)、[flannel](https://coreos.com/flannel/docs/latest/)、[calico](https://www.projectcalico.org/)、[ovs](https://github.com/openvswitch/ovs)，证书认证[cfssl](http://blog.simlinux.com/archives/1953.html)，服务注册和发现[etcd](https://coreos.com/etcd/docs/latest/docs.html#documentation)，无服务器[OpenFaas](https://github.com/openfaas/faas)、镜像仓库[harbor](https://github.com/vmware/harbor/blob/master/docs/installation_guide.md)、drone微信插件[drone-wechat](https://github.com/clem109/drone-wechat)、镜像扫描工具[clair](https://github.com/coreos/clair#kubernetes)
 
 > **对于CI/CD过程中需要规划各个流程，版本定义、Dockerfile等**
 
