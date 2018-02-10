@@ -36,6 +36,8 @@ REST接口测试工具[insomnia](https://github.com/getinsomnia/insomnia)，基�
 
 代码审查工具[phabricator](https://github.com/phacility/phabricator)
 
+API文档生成器[mkdocs](https://github.com/mkdocs/mkdocs.git)
+
 ### 环境搭建工具
 
 环境的搭建需要各个方面的知识，包括bash编程、linux系统知识、编程知识等。
@@ -99,7 +101,10 @@ REST接口测试工具[insomnia](https://github.com/getinsomnia/insomnia)，基�
 ### 运维工具
 
 * 服务器管理工具[Teleport](http://teleport.eomsoft.net/)
-* ​
+
+### 接口测试工具
+
+REST接口测试客户端[Insomnia](https://github.com/getinsomnia/insomnia)、接口Mock工具[json-server](https://github.com/typicode/json-server)以及faker假数据生成工具[json-schema-faker](https://github.com/json-schema-faker/json-schema-faker)
 
 ### 其他
 
@@ -108,5 +113,5 @@ REST接口测试工具[insomnia](https://github.com/getinsomnia/insomnia)，基�
 * 对于需求不明确的地方找产品确认
 * 对于测试过程中编写文档
 * 规划版本标识，设计安装脚本
-* 。。。
+
 
